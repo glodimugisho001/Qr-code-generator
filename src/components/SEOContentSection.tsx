@@ -107,7 +107,7 @@ export function SEOContentSection() {
 
       {/* Guide Technique et Correction d'erreur */}
       <section className="space-y-6" aria-labelledby="guide-heading">
-        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-indigo-950/30 via-slate-900/60 to-purple-950/20 border border-indigo-500/20 space-y-4">
+        <div className="p-6 sm:p-8 rounded-2xl bg-linear-to-br from-indigo-950/30 via-slate-900/60 to-purple-950/20 border border-indigo-500/20 space-y-4">
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-semibold text-indigo-400 uppercase tracking-wider">
               Conseils professionnels

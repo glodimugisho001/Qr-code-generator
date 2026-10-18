@@ -115,7 +115,7 @@ export default function Home() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-bold tracking-tight text-base sm:text-lg bg-gradient-to-r from-white via-slate-100 to-indigo-200 bg-clip-text text-transparent">
+                <span className="font-bold tracking-tight text-base sm:text-lg bg-linear-to-r from-white via-slate-100 to-indigo-200 bg-clip-text text-transparent">
                   QR Code Generator
                 </span>
                 <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
@@ -147,7 +147,7 @@ export default function Home() {
               Créez vos codes pour le web, Wi-Fi, cartes de visite et plus
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-linear-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
             Générateur de QR Code Gratuit, HD & Vectoriel en Ligne
           </h1>
           <p className="text-sm sm:text-base text-slate-400">
