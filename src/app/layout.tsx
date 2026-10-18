@@ -14,15 +14,17 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://qr-pulse.vercel.app",
+    process.env.NEXT_PUBLIC_SITE_URL || "https://qrcode-generator.vercel.app",
   ),
   title: {
-    default: "QR Pulse — Générateur de QR Code Gratuit & Personnalisé HD",
-    template: "%s | QR Pulse",
+    default:
+      "QR Code Generator — Générateur de QR Code Gratuit & Personnalisé HD",
+    template: "%s | QR Code Generator",
   },
   description:
     "Créez des QR Codes personnalisés, vectoriels et en haute définition gratuitement. Formats Wi-Fi, URL, vCard, Email, SMS avec export PNG HD et SVG. 100% privé, sans inscription.",
   keywords: [
+    "qr code generator",
     "générateur de qr code",
     "générateur qr code gratuit",
     "créer qr code en ligne",
@@ -35,20 +37,21 @@ export const metadata: Metadata = {
     "free qr code generator",
     "custom qr code creator",
   ],
-  authors: [{ name: "QR Pulse Studio" }],
-  creator: "QR Pulse Studio",
-  publisher: "QR Pulse Studio",
-  applicationName: "QR Pulse",
+  authors: [{ name: "QR Code Generator" }],
+  creator: "QR Code Generator",
+  publisher: "QR Code Generator",
+  applicationName: "QR Code Generator",
   category: "technology",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "QR Pulse — Générateur de QR Code Gratuit & Personnalisé HD",
+    title:
+      "QR Code Generator — Générateur de QR Code Gratuit & Personnalisé HD",
     description:
       "Générez et téléchargez des QR codes professionnels (Wi-Fi, URLs, vCard, SMS, Email) en PNG HD ou SVG vectoriel. Gratuit et sans inscription.",
     url: "/",
-    siteName: "QR Pulse",
+    siteName: "QR Code Generator",
     locale: "fr_FR",
     type: "website",
     images: [
@@ -56,13 +59,14 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "QR Pulse — Générateur de QR Code Gratuit & Personnalisé",
+        alt: "QR Code Generator — Générateur de QR Code Gratuit & Personnalisé",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QR Pulse — Générateur de QR Code Gratuit & Personnalisé HD",
+    title:
+      "QR Code Generator — Générateur de QR Code Gratuit & Personnalisé HD",
     description:
       "Créez vos QR Codes en haute définition (PNG, SVG, Wi-Fi, vCard). 100% gratuit et instantané.",
     images: ["/opengraph-image.png"],
@@ -85,9 +89,9 @@ const jsonLdData = {
   "@graph": [
     {
       "@type": "WebApplication",
-      "@id": "https://qr-pulse.vercel.app/#webapp",
-      name: "QR Pulse",
-      url: "https://qr-pulse.vercel.app",
+      "@id": "https://qrcode-generator.vercel.app/#webapp",
+      name: "QR Code Generator",
+      url: "https://qrcode-generator.vercel.app",
       applicationCategory: "UtilityApplication",
       operatingSystem: "All",
       browserRequirements: "Requires JavaScript. Requires HTML5.",
@@ -108,11 +112,11 @@ const jsonLdData = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://qr-pulse.vercel.app/#faq",
+      "@id": "https://qrcode-generator.vercel.app/#faq",
       mainEntity: [
         {
           "@type": "Question",
-          name: "Comment créer un QR Code gratuitement sur QR Pulse ?",
+          name: "Comment créer un QR Code gratuitement sur QR Code Generator ?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Il vous suffit de sélectionner le type de contenu (lien URL, réseau Wi-Fi, carte vCard, email ou SMS), de saisir vos informations et de personnaliser les couleurs. Votre QR Code se génère en temps réel et peut être téléchargé en PNG ou SVG sans aucune inscription.",

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const FAQ_ITEMS = [
   {
-    question: "Comment générer un QR Code gratuitement sur QR Pulse ?",
+    question: "Comment générer un QR Code gratuitement sur QR Code Generator ?",
     answer:
       "Sélectionnez simplement l'onglet correspondant à votre besoin (Lien URL, Wi-Fi, vCard, Email, SMS ou Texte), entrez vos informations, personnalisez les couleurs si vous le souhaitez et téléchargez votre QR Code instantanément en PNG haute définition ou SVG vectoriel. Aucune inscription ni carte bancaire n'est requise.",
   },
@@ -12,7 +12,7 @@ const FAQ_ITEMS = [
     question:
       "Comment fonctionne le QR Code Wi-Fi pour se connecter sans mot de passe ?",
     answer:
-      "En saisissant le nom de votre réseau (SSID) et sa clé de sécurité, QR Pulse génère un QR code respectant le standard universel Wi-Fi. Dès qu'un invité scanne le code avec l'appareil photo de son smartphone (iOS ou Android), l'appareil propose automatiquement de rejoindre le réseau sans aucune saisie manuelle.",
+      "En saisissant le nom de votre réseau (SSID) et sa clé de sécurité, QR Code Generator génère un QR code respectant le standard universel Wi-Fi. Dès qu'un invité scanne le code avec l'appareil photo de son smartphone (iOS ou Android), l'appareil propose automatiquement de rejoindre le réseau sans aucune saisie manuelle.",
   },
   {
     question: "Quel format d'export privilégier entre PNG et SVG ?",
