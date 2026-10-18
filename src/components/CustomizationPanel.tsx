@@ -210,7 +210,7 @@ export function CustomizationPanel({
           <span className="text-slate-300">Tolérance aux erreurs</span>
           <span className="text-slate-400 text-[11px]">
             {settings.errorCorrectionLevel === "L" && "Faible (7%)"}
-            {settings.errorCorrectionLevel === "M" && 
+            {settings.errorCorrectionLevel === "M" &&
               "Moyenne (15% - Recommandé)"}
             {settings.errorCorrectionLevel === "Q" && "Élevée (25%)"}
             {settings.errorCorrectionLevel === "H" && "Maximale (30%)"}

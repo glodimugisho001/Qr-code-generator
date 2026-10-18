@@ -28,19 +28,25 @@ export function InputTabs({
   const [url, setUrl] = useState("https://antigravity.google.com");
 
   // Text state
-  const [text, setText] = useState("Bonjour le monde ! Bienvenue sur mon QR Code.");
+  const [text, setText] = useState(
+    "Bonjour le monde ! Bienvenue sur mon QR Code.",
+  );
 
   // WiFi state
   const [wifiSsid, setWifiSsid] = useState("MonSuperWiFi");
   const [wifiPassword, setWifiPassword] = useState("motdepasse123");
-  const [wifiEncryption, setWifiEncryption] = useState<"WPA" | "WEP" | "nopass">("WPA");
+  const [wifiEncryption, setWifiEncryption] = useState<
+    "WPA" | "WEP" | "nopass"
+  >("WPA");
   const [wifiHidden, setWifiHidden] = useState(false);
   const [showWifiPassword, setShowWifiPassword] = useState(false);
 
   // Email state
   const [emailTo, setEmailTo] = useState("contact@exemple.com");
   const [emailSubject, setEmailSubject] = useState("Demande d'information");
-  const [emailBody, setEmailBody] = useState("Bonjour, je vous contacte suite à votre QR code.");
+  const [emailBody, setEmailBody] = useState(
+    "Bonjour, je vous contacte suite à votre QR code.",
+  );
 
   // vCard state
   const [vcardName, setVcardName] = useState("Alexandre Martin");
@@ -68,7 +74,7 @@ export function InputTabs({
     ssid = wifiSsid,
     pass = wifiPassword,
     enc = wifiEncryption,
-    hidden = wifiHidden
+    hidden = wifiHidden,
   ) => {
     // Format: WIFI:T:WPA;S:MySSID;P:MyPassword;H:false;;
     const payload = `WIFI:T:${enc};S:${ssid};P:${enc === "nopass" ? "" : pass};H:${hidden ? "true" : "false"};;`;
@@ -89,7 +95,7 @@ export function InputTabs({
     phone = vcardPhone,
     mail = vcardEmail,
     org = vcardOrg,
-    site = vcardUrl
+    site = vcardUrl,
   ) => {
     const vcard = [
       "BEGIN:VCARD",
@@ -161,7 +167,10 @@ export function InputTabs({
         {contentType === "url" && (
           <div className="space-y-3">
             <div>
-              <label htmlFor="input-url" className="block text-xs font-medium text-slate-300 mb-1.5">
+              <label
+                htmlFor="input-url"
+                className="block text-xs font-medium text-slate-300 mb-1.5"
+              >
                 Adresse URL du site web
               </label>
               <div className="relative">
@@ -205,7 +214,10 @@ export function InputTabs({
         {contentType === "text" && (
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <label htmlFor="input-text" className="text-xs font-medium text-slate-300">
+              <label
+                htmlFor="input-text"
+                className="text-xs font-medium text-slate-300"
+              >
                 Message ou texte personnalisé
               </label>
               <span className="text-[11px] text-slate-400 font-mono">
@@ -228,7 +240,10 @@ export function InputTabs({
           <div className="space-y-3.5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label htmlFor="wifi-ssid" className="block text-xs font-medium text-slate-300 mb-1">
+                <label
+                  htmlFor="wifi-ssid"
+                  className="block text-xs font-medium text-slate-300 mb-1"
+                >
                   Nom du réseau (SSID)
                 </label>
                 <input
@@ -238,7 +253,12 @@ export function InputTabs({
                   value={wifiSsid}
                   onChange={(e) => {
                     setWifiSsid(e.target.value);
-                    updateWifi(e.target.value, wifiPassword, wifiEncryption, wifiHidden);
+                    updateWifi(
+                      e.target.value,
+                      wifiPassword,
+                      wifiEncryption,
+                      wifiHidden,
+                    );
                   }}
                   className="w-full bg-slate-950/70 border border-white/10 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-indigo-500 transition-all"
                 />
@@ -246,7 +266,10 @@ export function InputTabs({
 
               <div>
                 <div className="flex justify-between items-center mb-1">
-                  <label htmlFor="wifi-pass" className="text-xs font-medium text-slate-300">
+                  <label
+                    htmlFor="wifi-pass"
+                    className="text-xs font-medium text-slate-300"
+                  >
                     Mot de passe
                   </label>
                   <button
@@ -265,7 +288,12 @@ export function InputTabs({
                   disabled={wifiEncryption === "nopass"}
                   onChange={(e) => {
                     setWifiPassword(e.target.value);
-                    updateWifi(wifiSsid, e.target.value, wifiEncryption, wifiHidden);
+                    updateWifi(
+                      wifiSsid,
+                      e.target.value,
+                      wifiEncryption,
+                      wifiHidden,
+                    );
                   }}
                   className="w-full bg-slate-950/70 border border-white/10 rounded-xl px-3 py-2 text-sm text-slate-100 disabled:opacity-40 focus:outline-none focus:border-indigo-500 transition-all"
                 />
@@ -274,7 +302,10 @@ export function InputTabs({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
               <div>
-                <label htmlFor="wifi-enc" className="block text-xs font-medium text-slate-300 mb-1">
+                <label
+                  htmlFor="wifi-enc"
+                  className="block text-xs font-medium text-slate-300 mb-1"
+                >
                   Sécurité / Chiffrement
                 </label>
                 <select
@@ -300,7 +331,12 @@ export function InputTabs({
                     checked={wifiHidden}
                     onChange={(e) => {
                       setWifiHidden(e.target.checked);
-                      updateWifi(wifiSsid, wifiPassword, wifiEncryption, e.target.checked);
+                      updateWifi(
+                        wifiSsid,
+                        wifiPassword,
+                        wifiEncryption,
+                        e.target.checked,
+                      );
                     }}
                     className="rounded border-slate-700 bg-slate-800 text-indigo-500 focus:ring-0 focus:ring-offset-0"
                   />
@@ -309,7 +345,8 @@ export function InputTabs({
               </div>
             </div>
             <p className="text-[11px] text-slate-400 bg-indigo-500/10 border border-indigo-500/20 p-2.5 rounded-lg">
-              💡 Les smartphones qui scannent ce QR code se connecteront automatiquement à votre Wi-Fi sans taper le mot de passe !
+              💡 Les smartphones qui scannent ce QR code se connecteront
+              automatiquement à votre Wi-Fi sans taper le mot de passe !
             </p>
           </div>
         )}
@@ -318,7 +355,10 @@ export function InputTabs({
         {contentType === "email" && (
           <div className="space-y-3">
             <div>
-              <label htmlFor="email-to" className="block text-xs font-medium text-slate-300 mb-1">
+              <label
+                htmlFor="email-to"
+                className="block text-xs font-medium text-slate-300 mb-1"
+              >
                 Adresse e-mail du destinataire
               </label>
               <input
@@ -334,7 +374,10 @@ export function InputTabs({
               />
             </div>
             <div>
-              <label htmlFor="email-subject" className="block text-xs font-medium text-slate-300 mb-1">
+              <label
+                htmlFor="email-subject"
+                className="block text-xs font-medium text-slate-300 mb-1"
+              >
                 Objet du message
               </label>
               <input
@@ -350,7 +393,10 @@ export function InputTabs({
               />
             </div>
             <div>
-              <label htmlFor="email-body" className="block text-xs font-medium text-slate-300 mb-1">
+              <label
+                htmlFor="email-body"
+                className="block text-xs font-medium text-slate-300 mb-1"
+              >
                 Corps du message (pré-rempli)
               </label>
               <textarea
@@ -373,7 +419,10 @@ export function InputTabs({
           <div className="space-y-3">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label htmlFor="vcard-name" className="block text-xs font-medium text-slate-300 mb-1">
+                <label
+                  htmlFor="vcard-name"
+                  className="block text-xs font-medium text-slate-300 mb-1"
+                >
                   Nom complet
                 </label>
                 <input
@@ -383,13 +432,22 @@ export function InputTabs({
                   value={vcardName}
                   onChange={(e) => {
                     setVcardName(e.target.value);
-                    updateVCard(e.target.value, vcardPhone, vcardEmail, vcardOrg, vcardUrl);
+                    updateVCard(
+                      e.target.value,
+                      vcardPhone,
+                      vcardEmail,
+                      vcardOrg,
+                      vcardUrl,
+                    );
                   }}
                   className="w-full bg-slate-950/70 border border-white/10 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-indigo-500 transition-all"
                 />
               </div>
               <div>
-                <label htmlFor="vcard-phone" className="block text-xs font-medium text-slate-300 mb-1">
+                <label
+                  htmlFor="vcard-phone"
+                  className="block text-xs font-medium text-slate-300 mb-1"
+                >
                   Numéro de téléphone
                 </label>
                 <input
@@ -399,7 +457,13 @@ export function InputTabs({
                   value={vcardPhone}
                   onChange={(e) => {
                     setVcardPhone(e.target.value);
-                    updateVCard(vcardName, e.target.value, vcardEmail, vcardOrg, vcardUrl);
+                    updateVCard(
+                      vcardName,
+                      e.target.value,
+                      vcardEmail,
+                      vcardOrg,
+                      vcardUrl,
+                    );
                   }}
                   className="w-full bg-slate-950/70 border border-white/10 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-indigo-500 transition-all"
                 />
@@ -408,7 +472,10 @@ export function InputTabs({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label htmlFor="vcard-email" className="block text-xs font-medium text-slate-300 mb-1">
+                <label
+                  htmlFor="vcard-email"
+                  className="block text-xs font-medium text-slate-300 mb-1"
+                >
                   Email
                 </label>
                 <input
@@ -418,13 +485,22 @@ export function InputTabs({
                   value={vcardEmail}
                   onChange={(e) => {
                     setVcardEmail(e.target.value);
-                    updateVCard(vcardName, vcardPhone, e.target.value, vcardOrg, vcardUrl);
+                    updateVCard(
+                      vcardName,
+                      vcardPhone,
+                      e.target.value,
+                      vcardOrg,
+                      vcardUrl,
+                    );
                   }}
                   className="w-full bg-slate-950/70 border border-white/10 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-indigo-500 transition-all"
                 />
               </div>
               <div>
-                <label htmlFor="vcard-org" className="block text-xs font-medium text-slate-300 mb-1">
+                <label
+                  htmlFor="vcard-org"
+                  className="block text-xs font-medium text-slate-300 mb-1"
+                >
                   Entreprise / Titre
                 </label>
                 <input
@@ -434,7 +510,13 @@ export function InputTabs({
                   value={vcardOrg}
                   onChange={(e) => {
                     setVcardOrg(e.target.value);
-                    updateVCard(vcardName, vcardPhone, vcardEmail, e.target.value, vcardUrl);
+                    updateVCard(
+                      vcardName,
+                      vcardPhone,
+                      vcardEmail,
+                      e.target.value,
+                      vcardUrl,
+                    );
                   }}
                   className="w-full bg-slate-950/70 border border-white/10 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-indigo-500 transition-all"
                 />
@@ -442,7 +524,10 @@ export function InputTabs({
             </div>
 
             <div>
-              <label htmlFor="vcard-url" className="block text-xs font-medium text-slate-300 mb-1">
+              <label
+                htmlFor="vcard-url"
+                className="block text-xs font-medium text-slate-300 mb-1"
+              >
                 Site Web ou Profil
               </label>
               <input
@@ -452,7 +537,13 @@ export function InputTabs({
                 value={vcardUrl}
                 onChange={(e) => {
                   setVcardUrl(e.target.value);
-                  updateVCard(vcardName, vcardPhone, vcardEmail, vcardOrg, e.target.value);
+                  updateVCard(
+                    vcardName,
+                    vcardPhone,
+                    vcardEmail,
+                    vcardOrg,
+                    e.target.value,
+                  );
                 }}
                 className="w-full bg-slate-950/70 border border-white/10 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-indigo-500 transition-all"
               />
@@ -464,7 +555,10 @@ export function InputTabs({
         {contentType === "sms" && (
           <div className="space-y-3">
             <div>
-              <label htmlFor="sms-phone" className="block text-xs font-medium text-slate-300 mb-1">
+              <label
+                htmlFor="sms-phone"
+                className="block text-xs font-medium text-slate-300 mb-1"
+              >
                 Numéro de téléphone
               </label>
               <input
@@ -480,7 +574,10 @@ export function InputTabs({
               />
             </div>
             <div>
-              <label htmlFor="sms-message" className="block text-xs font-medium text-slate-300 mb-1">
+              <label
+                htmlFor="sms-message"
+                className="block text-xs font-medium text-slate-300 mb-1"
+              >
                 Message SMS
               </label>
               <textarea
