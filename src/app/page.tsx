@@ -9,6 +9,7 @@ import { type HistoryItem, HistorySection } from "@/components/HistorySection";
 import { QrScanIcon, SparklesIcon } from "@/components/Icons";
 import { InputTabs, type QRContentType } from "@/components/InputTabs";
 import { QRCodePreview } from "@/components/QRCodePreview";
+import { SEOContentSection } from "@/components/SEOContentSection";
 
 const DEFAULT_SETTINGS: QRSettings = {
   fgColor: "#0f172a",
@@ -147,11 +148,12 @@ export default function Home() {
             </span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
-            Générez des QR Codes élégants en quelques secondes
+            Générateur de QR Code Gratuit, HD & Vectoriel en Ligne
           </h1>
           <p className="text-sm sm:text-base text-slate-400">
-            Simple, rapide et sans inscription. Personnalisez vos couleurs,
-            prévisualisez en direct et téléchargez en PNG haute définition ou
+            Simple, rapide et sans inscription. Créez des QR codes pour vos
+            liens web, réseaux Wi-Fi, cartes de visite vCard, e-mails et SMS.
+            Personnalisez vos couleurs et téléchargez en PNG haute résolution ou
             format vectoriel SVG.
           </p>
         </div>
@@ -251,6 +253,9 @@ export default function Home() {
             </p>
           </div>
         </div>
+
+        {/* SEO Rich Content, Use Cases & FAQ */}
+        <SEOContentSection />
       </main>
 
       {/* Footer */}
